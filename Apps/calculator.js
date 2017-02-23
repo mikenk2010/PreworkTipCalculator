@@ -1,10 +1,10 @@
 import React, {Component} from "React";
-import {AppRegistry,  Text, View, TextInput, StyleSheet} from "react-native"
+import {AppRegistry,  Text, View, TextInput, StyleSheet, TouchableOpacity, Keyboard} from "react-native"
 
 // External plugins
 import SegmentedControlTab from 'react-native-segmented-control-tab'
 
-export default class App extends Component{
+export default class Calculator extends Component{
   constructor(props){
     super(props);
     this.state = {billAmount : '', 'tipAmount' : 0.00, tipPercent : 0, 'result': 0}
@@ -22,7 +22,7 @@ export default class App extends Component{
     this.conChangeCalculateTotal(this.state.billAmount, index);
   }
 
-  // Mail function,
+  // Main function,
   conChangeCalculateTotal(bill, index){
     if(!index && index != 0){
       index = this.state.tipPercent;
@@ -38,7 +38,7 @@ export default class App extends Component{
     var tip = this.calculateTipTotal(bill, index);
     this.setState({
       tipAmount: tip.toFixed(2),
-      billAmount: bill + "", // !!! Do you know why I have to plus ""
+      billAmount: bill + "", // !!! Do you know why I have to plus "" ? try to remv
       result: parseFloat(bill + tip)
     })
   }
@@ -59,9 +59,13 @@ export default class App extends Component{
     return ['10%', '15%', '50%'];
   }
 
+  clickMe(){
+    alert('ss');
+  }
+
   render(){
     return (
-      <View style={{marginTop:30,padding:10}}>
+      <View style={{marginTop:30,padding:10}} onClick={()=>this.clickMe(this)} key='container'>
         <View><Text style={stylesCSS.header}>Tip Calculator</Text></View>
         <View>
           {/*Bill amount field*/}
@@ -145,4 +149,4 @@ var stylesCSS = StyleSheet.create({
 });
 
 // Export Compoment
-module.exports = App;
+module.exports = Calculator;
