@@ -4,12 +4,12 @@ import { AppRegistry, View, TouchableWithoutFeedback, StyleSheet, Keyboard } fro
 import PowerRanger from './Apps/powerRanger.js';
 
 export default class PreworkTipCalculator extends Component {
-  aaaaa(){
-    Keyboard.dismiss(); 
+  dismissKeyboard(){
+    Keyboard.dismiss();
   }
   render() {
     return (
-      <TouchableWithoutFeedback style={styleCSS.container} onPress={()=>this.aaaaa()}>
+      <TouchableWithoutFeedback style={styleCSS.container} onPress={()=>this.dismissKeyboard()}>
         <View style={styleCSS.container} >
           <PowerRanger />
         </View>
