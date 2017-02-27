@@ -1,5 +1,5 @@
 import React, {Component} from "React";
-import {AppRegistry,  Text, View, TextInput, StyleSheet, TouchableOpacity, Keyboard} from "react-native"
+import {AppRegistry, Text, View, TextInput, StyleSheet, TouchableOpacity, Keyboard} from "react-native"
 
 // External plugins
 import SegmentedControlTab from 'react-native-segmented-control-tab'
@@ -66,7 +66,11 @@ export default class Calculator extends Component{
   render(){
     return (
       <View style={{marginTop:30,padding:10}} onClick={()=>this.clickMe(this)} key='container'>
-        <View><Text style={stylesCSS.header}>Tip Calculator</Text></View>
+        {/*Header*/}
+        <View>
+          <Text style={stylesCSS.header}>Tip Calculator</Text>
+        </View>
+        {/*End Header*/}
         <View>
           {/*Bill amount field*/}
           <View style={stylesCSS.space, stylesCSS.billStyle}>
