@@ -37,4 +37,4 @@ The following **additional** features are implemented:
 - [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough 
-![image](https://github.com/mikenk2010/PreworkTipCalculator/blob/master/android_ios_final.gif)
+![image](http://imgur.com/a/4EPX5)
